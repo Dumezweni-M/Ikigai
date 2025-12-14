@@ -1,0 +1,53 @@
+import Ionicons from "@react-native-vector-icons/ionicons";
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { View, Text, Pressable } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons"
+
+const Tabs = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
+
+  const tabs = [
+    { name: "Cycles", label: "Cycles", icon: "repeat-outline" },
+  ];
+
+  return (
+    <View className="flex-row justify-evenly items-center px-2 pt-2 pb-2 bg-white shadow-lg ">
+      {tabs.map((tab) => {
+        const isActive = route.name === tab.name; // 👈 highlight current tab
+        return (
+          <Pressable
+            key={tab.name}
+            onPress={() => navigation.navigate(tab.name)}
+            className={`w-1/6 border p-1 rounded items-center justify-center ${
+              isActive ? "bg-blue-400 border-gray-800" : "bg-white border-gray-300"
+            }`}
+          >
+            <Ionicons
+              name={tab.icon}
+              size={20}
+              color={isActive ? "white" : "black"}
+            />
+            <MaterialIcons name="delete" size={34} />
+            <MaterialIcons name="download" size={34} color={""} />
+            <MaterialIcons name="token" size={34} />
+            <MaterialIcons name="favorite" size={34} />
+            <MaterialIcons name="settings" size={34} />
+            <MaterialIcons name="key" size={34} />
+            <Ionicons
+              name={tab.icon}
+              size={20}
+              color={isActive ? "white" : "black"}
+            />
+            
+            <Text className={`${isActive ? "text-white font-bold" : "text-black"}`}>
+              {tab.label}
+            </Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+};
+
+export default Tabs;
