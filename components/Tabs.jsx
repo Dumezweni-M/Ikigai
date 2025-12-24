@@ -28,17 +28,6 @@ const Tabs = () => {
               size={20}
               color={isActive ? "white" : "black"}
             />
-            <MaterialIcons name="delete" size={34} />
-            <MaterialIcons name="download" size={34} color={""} />
-            <MaterialIcons name="token" size={34} />
-            <MaterialIcons name="favorite" size={34} />
-            <MaterialIcons name="settings" size={34} />
-            <MaterialIcons name="key" size={34} />
-            <Ionicons
-              name={tab.icon}
-              size={20}
-              color={isActive ? "white" : "black"}
-            />
             
             <Text className={`${isActive ? "text-white font-bold" : "text-black"}`}>
               {tab.label}
