@@ -8,23 +8,23 @@ const CategorySelector = ({
 }) => {
   const categories = ["daily", "home", "work", "misc"];
 
-  // 1. Logic for standard category buttons
+  
 const handleCategorySelect = (cat) => {
     if (selectedCategory === cat) {
-      // Toggle off if already selected
+     
       setSelectedCategory(null);
     } else {
-      // Select the new category
+     
       setSelectedCategory(cat);
     }
   };
 
-  // 2. Logic for the Important toggle button
+ 
 const handleImportantToggle = () => {
-    // Simply toggle the important status independently
+   
     setIsImportant(prev => !prev); 
 
-    // *** REMOVE: the line that clears setSelectedCategory(null); ***
+    
   };
 
   return (
@@ -62,7 +62,7 @@ const handleImportantToggle = () => {
         onPress={handleImportantToggle} // Use the new handler
         className={`px-3 py-1 mr-2 mb-2 rounded-xl border ${
           isImportant
-            ? "bg-gray-700 border-gray-500" // Distinct look for important
+            ? "bg-gray-700 border-gray-500" 
             : "bg-white border-gray-400"
         }`}
       >

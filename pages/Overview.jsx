@@ -6,6 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 import Header from "../components/Header";
 import Tabs from "../components/Tabs";
 import Calendar from "../components/Calendar";
+import DrawerButton from "../components/DrawerButton";
 
 
 const Home = () => {
@@ -13,16 +14,16 @@ const Home = () => {
     return (
         
     <PageWrapper>
-    <Header />
+      <DrawerButton/>
 
     {/* Middle Scrollable Area */}
-    <View className="flex-1 border-2 rounded-xl m-1 p-2">
+    <View className="flex-1 rounded-xl m-1 p-2">
 
       <Calendar/>
   
     </View>
 
-    <Tabs />
+ 
   </PageWrapper>
                 
     );

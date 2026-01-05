@@ -1,7 +1,6 @@
 import Ionicons from "@react-native-vector-icons/ionicons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { View, Text, Pressable } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons"
 
 const Tabs = () => {
   const navigation = useNavigation();
@@ -14,7 +13,7 @@ const Tabs = () => {
   return (
     <View className="flex-row justify-evenly items-center px-2 pt-2 pb-2 bg-white shadow-lg ">
       {tabs.map((tab) => {
-        const isActive = route.name === tab.name; // 👈 highlight current tab
+        const isActive = route.name === tab.name; 
         return (
           <Pressable
             key={tab.name}
