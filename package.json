@@ -42,6 +42,7 @@
   "private": true,
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.9.19",
     "postcss": "^8.5.6"
   }
 }

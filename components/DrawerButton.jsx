@@ -8,7 +8,7 @@ const DrawerButton = () => {
   return (
     
     <TouchableOpacity
-        className="p-2 border"
+        className="p-2 border-b border-gray-300"
         onPress={() => navigation.openDrawer()}>
       <Menu color="black" size={24} />
     </TouchableOpacity>

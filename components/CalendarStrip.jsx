@@ -10,6 +10,7 @@ const Calendar = ( ) => {
                     scrollable
                     style={{height: 100, paddingTop: 20, paddingBottom: 10}}
                     calendarColor={'#ffffff'}
+                    todayTextColor={'blue'}
                     calendarHeaderStyle={{color: 'black'}}
                     dateNumberStyle={{color: 'black'}}
                     dateNameStyle={{color: 'black'}}
