@@ -6,7 +6,10 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { StatusBar } from "expo-status-bar";
 import { Provider as PaperProvider } from "react-native-paper";
 
-import Cycles from "./pages/Overview";
+import Home from "./pages/Home";
+import OnBoarding from './pages/OnBoarding';
+import OnBoarding2 from './pages/OnBoarding2';
+import HabitManager from './pages/HabitManager';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -15,7 +18,10 @@ const Drawer = createDrawerNavigator();
 function StackNavigator() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Overview" component={Cycles} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="OnBoarding" component={OnBoarding} />
+      <Stack.Screen name="OnBoarding2" component={OnBoarding2} />
+      <Stack.Screen name="HabitManager" component={HabitManager} />
       {/* Add more Stack screens here later */}
     </Stack.Navigator>
   );
@@ -42,6 +48,21 @@ export default function App() {
           },            
           }}
           >
+          <Drawer.Screen 
+            name="Onboarding" 
+            component={StackNavigator} 
+            options={{ title: 'OnBoarding' }} 
+          />
+          <Drawer.Screen 
+            name="Onboarding2" 
+            component={StackNavigator} 
+            options={{ title: 'OnBoarding2' }} 
+          />
+          <Drawer.Screen 
+            name="HabitManager" 
+            component={StackNavigator} 
+            options={{ title: 'HabitManager' }} 
+          />
           <Drawer.Screen 
             name="Home" 
             component={StackNavigator} 

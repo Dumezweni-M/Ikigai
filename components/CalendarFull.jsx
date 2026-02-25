@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { Calendar } from 'react-native-calendars'; // Use the full Calendar import
+import { Calendar } from 'react-native-calendars'; 
 
 const FullCalendar = () => {
   const [selected, setSelected] = useState('');
@@ -8,7 +8,6 @@ const FullCalendar = () => {
   return (
     <View className="flex-1 bg-white p-4">
       <Calendar
-        // Style the calendar to match your "Todoist Red" theme
         theme={{
           backgroundColor: '#ffffff',
           calendarBackground: '#ffffff',
