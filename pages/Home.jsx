@@ -7,7 +7,9 @@ import PageWrapper from "../components/PageWrapper";
 import DrawerButton from "../components/DrawerButton";
 import Navi from "../components/Navi";
 
+import Calendar from "../components/CalendarStrip";
 import PowerWheel from "../components/PowerWheel";
+
 
 
 const Home = () => {
@@ -20,6 +22,7 @@ const Home = () => {
     {/* Middle Scrollable Area */}
     <View className="flex-1 rounded-xl m-1 p-2">
       <Navi/>
+      <Calendar/>
       <PowerWheel/>
 
       <View className="border rounded-lg mt-4 p-2 space-y-2">
@@ -28,7 +31,6 @@ const Home = () => {
         <Text className="text-xl">-Mission (World)Text friend check in[CHECK]</Text>
         <Text className="text-xl">-Profession (Paid)Clear inbox[CHECK]</Text>
       </View>
-      {/* <Calendar/> */}
       {/* <AddModal/> */}
       {/* <RadarGrid/> */}
       

@@ -10,32 +10,51 @@ import Home from "./pages/Home";
 import OnBoarding from './pages/OnBoarding';
 import OnBoarding2 from './pages/OnBoarding2';
 import HabitManager from './pages/HabitManager';
+import { useEffect } from 'react';
+import { getDB } from './db';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-// 1. Create a separate component for your Stack
 function StackNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="OnBoarding" component={OnBoarding} />
-      <Stack.Screen name="OnBoarding2" component={OnBoarding2} />
+      <Stack.Screen name="Onboarding" component={OnBoarding} />
+      <Stack.Screen name="Onboarding2" component={OnBoarding2} />
       <Stack.Screen name="HabitManager" component={HabitManager} />
       {/* Add more Stack screens here later */}
     </Stack.Navigator>
   );
 }
 
+
+
 export default function App() {
+useEffect(() => {
+    // Define an async function inside useEffect
+    const initialize = async () => {
+      try {
+        const db = await getDB();
+        console.log("Database initialized successfully");
+      } catch (error) {
+        console.error("Error initializing database:", error);
+      }
+    };
+
+    initialize();
+  }, []);
+
   return (
     <PaperProvider>
       <StatusBar hidden={true} />
       
       <NavigationContainer>
         {/* 2. The Drawer is the parent. It renders the Stack as one of its screens. */}
-        <Drawer.Navigator 
-          initialRouteName="Home"
+        <Drawer.Navigator
+          id="DrawerNav"
+          initialRouteName="HomeStack"
           screenOptions={{
             headerShown: false,
             drawerStyle: {
@@ -49,28 +68,28 @@ export default function App() {
           }}
           >
           <Drawer.Screen 
-            name="Onboarding" 
-            component={StackNavigator} 
+            name="OnboardingStack" 
+            component={StackNavigator}
             options={{ title: 'OnBoarding' }} 
           />
           <Drawer.Screen 
-            name="Onboarding2" 
-            component={StackNavigator} 
+            name="Onboarding2Stack" 
+            component={StackNavigator}
             options={{ title: 'OnBoarding2' }} 
           />
           <Drawer.Screen 
-            name="HabitManager" 
-            component={StackNavigator} 
+            name="HabitManagerStack" 
+            component={StackNavigator}
             options={{ title: 'HabitManager' }} 
           />
           <Drawer.Screen 
-            name="Home" 
-            component={StackNavigator} 
+            name="HomeStack" 
+            component={StackNavigator}
             options={{ title: 'Menu' }} 
           />
           <Drawer.Screen 
-            name="Settings" 
-            component={StackNavigator} 
+            name="SettingsStack" 
+            component={StackNavigator}
             options={{ title: 'Settings' }} 
           />
           {/* You can add more Drawer items here */}
